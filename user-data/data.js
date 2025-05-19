@@ -1,168 +1,123 @@
 export const bio = [
   "Hello, I'm Sid Senthilkumar!",
-  "<strong>Frontend Software Engineer</strong> with 4+ years of experience building scalable, user-focused web applications.",
-  "Skilled in Angular, TypeScript, and performance optimization, I aim to leverage my expertise in delivering innovative solutions that drive measurable business outcomes.",
-  "Passionate about mentoring, teamwork, and continuous improvement in engineering processes.",
+  "<strong>Bioinformatician</strong> specializing in AI/ML applications in computational biology, with a focus on Geometric Deep Learning and Multi-Omics Integration.",
+  "Currently working at New York Botanics, LLC, while pursuing intensive self-directed learning in cutting-edge AI/ML techniques for biological applications.",
+  "Passionate about developing innovative computational solutions that bridge the gap between biological data and actionable insights.",
 ];
 
 export const skills = [
-  "JavaScript, TypeScript, Angular, AngularJS, React, HTML5, CSS, Bootstrap",
-  "RxJS, NGXS, NGRX",
-  "Jenkins, JIRA, Webpack, Git",
+  "Programming: R, Python, SQL, Git, Bash, Docker, NixOS, AWS, SAS, Databricks, PySpark, awk, Golang",
+  "Data Analysis: Statistical Analysis, Hypothesis Testing, Regression Modeling, Survival Analysis",
+  "Bioinformatics: NGS Analysis (RNA-seq, ChIP-seq, Hi-C), WGCNA, DESeq2, MACS2, BWA, Multi-omics Integration",
+  "AI/ML: Geometric Deep Learning (GNNs, Equivariant NNs), Interpretable AI, Deep Learning for Genomics",
+  "Visualization: R Markdown, R Shiny, ggplot2, Tableau",
 ];
 
 export const experience = [
   {
-    title: "Shiprocket Private Limited",
-    duration: "September 2023 - Present",
-    subtitle: "Software Engineer",
+    title: "New York Botanics, LLC",
+    duration: "April 2025 - Present",
+    subtitle: "Bioinformatician",
     details: [
-      "Developed a design system using Stencil and Storybook that provides consistent UI components across platforms, ensuring a cohesive design.",
-      "Developed a dynamic support ticket panel that renders subcategories based on component IDs, handling up to 100 AWBs simultaneously.",
-      "Migrated 30+ modules from AngularJS to Angular 15 using Generative AI tools, reporting directly to the VP of Engineering.",
-      "Designed and implemented advanced features such as keyboard shortcuts, improving operational efficiency by 15 percent.",
-      "Took ownership of OKRs, collaborated with the product team, and mentored two junior developers, cutting their code review iterations and ensuring on-time feature delivery.",
+      "Strategic web design and effective presentation of biological data and research",
+      "Development and enhancement of web-based tools for biological applications",
+      "Creation of insightful data visualizations from complex biological datasets",
+      "Management of databases containing scientific information, ensuring integrity and accessibility",
+      "Scientific communication and reporting of findings",
     ],
-    tags: ["JavaScript", "Angular", "Bootstrap", "AngularJs"],
-    icon: "truck ",
+    tags: ["Bioinformatics", "Data Visualization", "Web Development", "Database Management"],
+    icon: "leaf",
   },
   {
-    title: "Biofourmis India Private Limited",
-    duration: "April 2022 - Jul 2023",
-    subtitle: "Software Engineer",
+    title: "Science and Math Tutor",
+    duration: "August 2023 - September 2024",
+    subtitle: "Tutoring Center, Plano, TX",
     details: [
-      "Spearheaded the implementation of micro-frontends using Module Federation, enabling modular and scalable architecture.",
-      "Earned the Biofourmis Bravo Award for upgrading the application to support flexible operations across multiple geographies.",
-      "Enhanced performance and user experience by integrating Twilio-Video, Countly, and NGXS WebSocket for real-time data management.",
+      "Designed and implemented customized STEM lesson plans for students aged 6-16",
+      "Achieved 80%+ student grade averages through effective teaching methods",
+      "Translated complex scientific concepts into easily understandable formats",
     ],
-    tags: [
-      "JavaScript",
-      "Angular",
-      "RxJS",
-      "NGXS",
-      "TypeScript",
-      "RxState",
-      "Webpack",
-      "Optimization",
-    ],
-    icon: "heartbeat",
+    tags: ["STEM Education", "Curriculum Development", "Student Mentoring"],
+    icon: "graduation-cap",
   },
   {
-    title: "Novopay Solutions Private Limited",
-    duration: "June 2020 - April 2022",
-    subtitle: "Software Engineer",
+    title: "Content Writer & Team Lead",
+    duration: "September 2018 - May 2022",
+    subtitle: "Scrabble Club of Kumaraguru, Coimbatore, India",
     details: [
-      "Built critical banking features including AePS services (eKYC, cash withdrawal, balance inquiry) used by over 1,00,000 retailers.",
-      "Developed QR code integration for wallet money loading, streamlining retailer workflows and reducing errors by 25 percent.",
-      "Integrated Clevertap analytics, Freshdesk ticketing, and chatbot services, enhancing user support and engagement.",
+      "Managed writing team and content creation (interviews, essays)",
+      "Adapted TV content to theatre format",
+      "Curated social media content and managed online presence",
     ],
-    tags: ["JavaScript", "Angular", "Bootstrap", "Nodejs", "Jenkins"],
-    icon: "qrcode",
+    tags: ["Content Creation", "Team Leadership", "Social Media Management"],
+    icon: "pencil",
   },
   {
-    title: "ThinkPedia LLP",
-    duration: "May 2019 - June 2019",
-    subtitle: "SDE Intern",
+    title: "Undergraduate Research Assistant",
+    duration: "August 2021 - May 2022",
+    subtitle: "Kumaraguru College of Technology, Coimbatore, India",
     details: [
-      `Designed and developed a social media post management panel, improving collaboration efficiency by 50 percent.`,
+      "Developed PCOS diagnosis model with 85% accuracy using Python",
+      "Implemented Medical Image Analysis methods using MATLAB and R",
+      "Created in silico docking models for research applications",
+      "Facilitated research accessibility across language barriers",
     ],
-    tags: ["JavaScript", "Angular", "Bootstrap", "Java", "Spring Boot"],
-    icon: "group",
+    tags: ["Python", "MATLAB", "R", "Medical Research", "Machine Learning"],
+    icon: "flask",
   },
-];
-
-export const trekking = [
-  "<strong>Kheerganga Trek</strong>, Himachal Pradesh (9,711 feet)",
-  "<strong>Triund Trek</strong>, Himachal Pradesh (9,350 feet)",
-  "<strong>Kedarkantha Trek</strong>, Uttarakhand (12,500 feet)",
-  "<strong>Jalori Pass Trek</strong>, Himachal Pradesh (10,800 feet)",
-  "<strong>Vaishno Devi Trek</strong>, Jammu & Kashmir (5,200 feet)",
 ];
 
 export const education = [
   {
-    title: "B.Tech. in Computer Science and Engineering",
-    duration: "2016 - 2020",
-    subtitle: "National Institute of Technology, Warangal",
+    title: "Master of Science (MS) in Bioinformatics and Computational Biology",
+    duration: "2022 - 2024",
+    subtitle: "University of Texas at Dallas (UTD)",
     details: [],
     tags: [
-      "Data Structures & Algorithms",
-      "Operating Systems",
-      "Database Management System",
-      "Computer Networks",
-      "Compiler Designing",
-      "Cloud Computing",
+      "Computational Biology",
+      "Bioinformatics",
+      "Machine Learning",
+      "Data Analysis",
+      "Research Methods",
     ],
     icon: "graduation-cap",
   },
   {
-    title: "Class 12th in Science and Mathematics",
-    duration: "",
-    subtitle: "Board of Secondary Education, Rajasthan",
+    title: "Bachelor of Technology (B.Tech) in Biotechnology",
+    duration: "2018 - 2022",
+    subtitle: "Kumaraguru College of Technology, Coimbatore, India",
     details: [],
-    tags: ["Physics", "Chemistry", "Mathematics"],
-    icon: "book",
+    tags: [
+      "Biotechnology",
+      "Molecular Biology",
+      "Genetics",
+      "Biochemistry",
+      "Research Methods",
+    ],
+    icon: "flask",
   },
 ];
 
 export const footer = [
-  //   {
-  //     label: "Dev Profiles",
-  //     data: [
-  //       {
-  //         text: "Stackoverflow",
-  //         link: "https://stackoverflow.com/users/8461233/vinay-somawat",
-  //       },
-  //       {
-  //         text: "GitHub",
-  //         link: "https://github.com/vinaysomawat",
-  //       },
-  //       {
-  //         text: "LeetCode",
-  //         link: "https://leetcode.com/somawatvinay/",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     label: "Resources",
-  //     data: [
-  //       {
-  //         text: "Enable Dark/Light Mode",
-  //         func: "enableDarkMode()",
-  //       },
-  //       {
-  //         text: "Print this page",
-  //         func: "window.print()",
-  //       },
-  //       {
-  //         text: "Clone this page",
-  //         link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
-  //       },
-  //     ],
-  //   },
   {
     label: "Links",
     data: [
-      //   {
-      //     text: "Linkedin",
-      //     link: "https://www.linkedin.com/in/vinaysomawat/",
-      //   },
-      //   {
-      //     text: "Twitter",
-      //     link: "https://twitter.com/thesigmakid",
-      //   },
       {
-        text: "Buy me a coffee",
-        link: "https://www.buymeacoffee.com/r194dME8y",
+        text: "LinkedIn",
+        link: "https://www.linkedin.com/in/siddharth-senthilkumar/",
       },
       {
-        text: "Github",
-        link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
+        text: "GitHub",
+        link: "https://github.com/sid-senthilkumar",
+      },
+      {
+        text: "Email",
+        link: "mailto:siddharthkrishna.ssk@gmail.com",
       },
     ],
   },
   {
     label: "copyright-text",
-    data: ["Made with &hearts; by Vinay Somawat"],
+    data: ["Made with &hearts; by Sid Senthilkumar"],
   },
 ];

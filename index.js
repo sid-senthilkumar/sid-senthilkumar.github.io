@@ -3,13 +3,12 @@ import {
   skills,
   education,
   experience,
-  trekking,
   footer,
 } from "./user-data/data.js";
 
 import { URLs } from "./user-data/urls.js";
 
-const { medium, gitConnected, gitRepo } = URLs;
+const { gitRepo } = URLs;
 
 async function fetchBlogsFromMedium(url) {
   try {
@@ -27,25 +26,19 @@ async function fetchReposFromGit(url) {
   try {
     const response = await fetch(url);
     const items = await response.json();
+    if (!items || !Array.isArray(items)) {
+      console.error('Invalid response format from GitHub API');
+      return;
+    }
     populateRepo(items, "repos");
   } catch (error) {
-    throw new Error(`Error in fetching the blogs from repos: ${error}`);
-  }
-}
-
-async function fetchGitConnectedData(url) {
-  try {
-    const response = await fetch(url);
-    console.log(response);
-    const { basics } = await response.json();
-    // populateBlogs(items, "blogs");
-    mapBasicResponse(basics);
-  } catch (error) {
-    throw new Error(`Error in fetching the blogs from git connected: ${error}`);
+    console.error(`Error in fetching the repos: ${error}`);
   }
 }
 
 function mapBasicResponse(basics) {
+  if (!basics) return;
+  
   const {
     name,
     label,
@@ -69,8 +62,10 @@ function mapBasicResponse(basics) {
     website,
   } = basics;
 
-  // added title of page
-  window.parent.document.title = name;
+  // Update title if name is available
+  if (name) {
+    document.title = name;
+  }
 }
 
 function populateBio(items, id) {
@@ -82,37 +77,36 @@ function populateBio(items, id) {
   });
 }
 
+// --- Skills rendering: supports category headings and easy extensibility ---
 function populateSkills(items, id) {
   const skillsTag = document.getElementById(id);
+  skillsTag.innerHTML = '';
   items.forEach((item) => {
-    const h3 = getElement("li", null);
-    h3.innerHTML = item;
-
-    const divProgressWrap = getElement("div", "progress-wrap");
-    divProgressWrap.append(h3);
-
-    const divAnimateBox = getElement("div", "col-md-12 animate-box");
-    divAnimateBox.append(divProgressWrap);
-
-    skillsTag.append(divAnimateBox);
+    const card = getElement("div", "card-bounce skill-card");
+    card.style.display = "flex";
+    card.style.flexDirection = "column";
+    card.style.alignItems = "center";
+    const colonIdx = item.indexOf(":");
+    if (colonIdx !== -1) {
+      const heading = item.slice(0, colonIdx);
+      const rest = item.slice(colonIdx + 1).trim();
+      // Heading as centered h3, content below
+      const h3 = document.createElement("h3");
+      h3.className = "skill-heading";
+      h3.textContent = heading;
+      card.appendChild(h3);
+      const content = document.createElement("div");
+      content.className = "skill-content";
+      content.textContent = rest;
+      content.style.textAlign = "center";
+      card.appendChild(content);
+    } else {
+      card.textContent = item;
+    }
+    skillsTag.append(card);
   });
 }
-
-function populateTrekking(items) {
-  const skillsTag = document.getElementById('trekking');
-  items.forEach((item) => {
-    const h3 = getElement("li", null);
-    h3.innerHTML = item;
-
-    const divProgressWrap = getElement("div", "progress-wrap");
-    divProgressWrap.append(h3);
-
-    const divAnimateBox = getElement("div", "col-md-12 animate-box");
-    divAnimateBox.append(divProgressWrap);
-
-    skillsTag.append(divAnimateBox);
-  });
-}
+// --- End skills rendering ---
 
 function populateBlogs(items, id) {
   const projectdesign = document.getElementById(id);
@@ -192,7 +186,7 @@ function populateBlogs(items, id) {
 
 function populateRepo(items, id) {
   const projectdesign = document.getElementById(id);
-  const count = 4; // Adjust this count based on the number of repos you want to display
+  const count = Math.min(4, items.length); // Adjust this count based on the number of repos you want to display
 
   // Set up a wrapper div to hold repo cards in rows of 2
   const rowWrapper = document.createElement("div");
@@ -203,7 +197,7 @@ function populateRepo(items, id) {
   for (let i = 0; i < count; i++) {
     // Create elements for each repo card
     const repoCard = document.createElement("div");
-    repoCard.className = "repo-card";
+    repoCard.className = "repo-card card-bounce";
     repoCard.style = `
           flex: 1 0 48%;  /* Two cards in one row */
           display: flex;
@@ -220,7 +214,7 @@ function populateRepo(items, id) {
 
     // Make the card clickable by wrapping the content inside an anchor tag
     const repoLink = document.createElement("a");
-    repoLink.href = `https://github.com/${items[i].author}/${items[i].name}`;
+    repoLink.href = items[i].html_url || `https://github.com/sid-senthilkumar/${items[i].name}`;
     repoLink.target = "_blank";
     repoLink.style =
       "text-decoration: none; color: black; display: block; height: 100%;";
@@ -237,7 +231,7 @@ function populateRepo(items, id) {
     // Repository description
     const repoDescription = document.createElement("p");
     repoDescription.className = "repo-description";
-    repoDescription.innerHTML = items[i].description;
+    repoDescription.innerHTML = items[i].description || "No description available";
     repoDescription.style = "margin-top: 8px; font-size: 12px; color: #555;";
     repoLink.appendChild(repoDescription);
 
@@ -253,20 +247,22 @@ function populateRepo(items, id) {
       `;
 
     // Language
-    const languageDiv = document.createElement("div");
-    languageDiv.style = "display: flex; align-items: center; gap: 4px;";
-    languageDiv.innerHTML = `
+    if (items[i].language) {
+      const languageDiv = document.createElement("div");
+      languageDiv.style = "display: flex; align-items: center; gap: 4px;";
+      languageDiv.innerHTML = `
           <span style="width: 8px; height: 8px; background-color: #666; border-radius: 50%; display: inline-block;"></span>
           ${items[i].language}
       `;
-    statsRow.appendChild(languageDiv);
+      statsRow.appendChild(languageDiv);
+    }
 
     // Stars
     const starsDiv = document.createElement("div");
     starsDiv.style = "display: flex; align-items: center; gap: 4px;";
     starsDiv.innerHTML = `
           <img src="https://img.icons8.com/ios-filled/16/666666/star--v1.png" alt="Stars">
-          ${items[i].stars}
+          ${items[i].stargazers_count || 0}
       `;
     statsRow.appendChild(starsDiv);
 
@@ -275,7 +271,7 @@ function populateRepo(items, id) {
     forksDiv.style = "display: flex; align-items: center; gap: 4px;";
     forksDiv.innerHTML = `
           <img src="https://img.icons8.com/ios-filled/16/666666/code-fork.png" alt="Forks">
-          ${items[i].forks}
+          ${items[i].forks_count || 0}
       `;
     statsRow.appendChild(forksDiv);
 
@@ -288,7 +284,7 @@ function populateRepo(items, id) {
 
 function populateExp_Edu(items, id) {
   let mainContainer = document.getElementById(id);
-
+  mainContainer.innerHTML = '';
   for (let i = 0; i < items.length; i++) {
     let spanTimelineSublabel = document.createElement("span");
     spanTimelineSublabel.className = "timeline-sublabel";
@@ -302,7 +298,7 @@ function populateExp_Edu(items, id) {
     h2TimelineLabel.append(spanh2);
 
     let divTimelineLabel = document.createElement("div");
-    divTimelineLabel.className = "timeline-label";
+    divTimelineLabel.className = "timeline-label card-bounce";
     divTimelineLabel.append(h2TimelineLabel);
     divTimelineLabel.append(spanTimelineSublabel);
 
@@ -340,19 +336,6 @@ function populateExp_Edu(items, id) {
 
     mainContainer.append(article);
   }
-
-  let divTimelineIcon = document.createElement("div");
-  divTimelineIcon.className = "timeline-icon color-2";
-
-  let divTimelineEntryInner = document.createElement("div");
-  divTimelineEntryInner.className = "timeline-entry-inner";
-  divTimelineEntryInner.append(divTimelineIcon);
-
-  let article = document.createElement("article");
-  article.className = "timeline-entry begin animate-box";
-  article.append(divTimelineEntryInner);
-
-  mainContainer.append(article);
 }
 
 function populateLinks(items, id) {
@@ -443,16 +426,41 @@ function getBlogDate(publishDate) {
   }
 }
 
-populateBio(bio, "bio");
-
-populateSkills(skills, "skills");
-
-fetchBlogsFromMedium(medium);
-fetchReposFromGit(gitRepo);
-fetchGitConnectedData(gitConnected);
-
-populateExp_Edu(experience, "experience");
-populateTrekking(trekking);
-populateExp_Edu(education, "education");
-
-populateLinks(footer, "footer");
+// Initialize the page
+window.addEventListener("load", async () => {
+  try {
+    console.log("Page loaded, starting initialization...");
+    console.log("Bio data:", bio);
+    console.log("Skills data:", skills);
+    console.log("Experience data:", experience);
+    console.log("Education data:", education);
+    
+    // Populate bio
+    console.log("Populating bio...");
+    populateBio(bio, "bio");
+    
+    // Populate skills
+    console.log("Populating skills...");
+    populateSkills(skills, "skills");
+    
+    // Populate experience
+    console.log("Populating experience...");
+    populateExp_Edu(experience, "experience");
+    
+    // Populate education
+    console.log("Populating education...");
+    populateExp_Edu(education, "education");
+    
+    // Populate footer
+    console.log("Populating footer...");
+    populateLinks(footer, "footer");
+    
+    // Fetch GitHub data
+    console.log("Fetching GitHub data...");
+    await fetchReposFromGit(gitRepo);
+    
+    console.log("Initialization complete!");
+  } catch (error) {
+    console.error("Error initializing page:", error);
+  }
+});

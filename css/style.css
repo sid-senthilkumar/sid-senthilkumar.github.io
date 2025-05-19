@@ -1,3 +1,143 @@
+/* === Iteration 1: Modern CSS Reset and Section Modularization === */
+/* Modern CSS Reset (by Andy Bell, https://piccalil.li/blog/a-modern-css-reset/) */
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+ul, ol { list-style: none; }
+img { max-width: 100%; display: block; }
+input, button, textarea, select { font: inherit; }
+body { min-height: 100vh; line-height: 1.5; }
+
+/* === Section: Skills === */
+.skills-section {
+	padding: 2em 0;
+}
+.skills-section #skills {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5em;
+	justify-content: center;
+}
+.skills-section .card-bounce, .skills-section .skill-card {
+	min-width: 220px;
+	flex: 1 1 220px;
+	text-align: left;
+	font-size: 1.1em;
+	padding: 1.2em 1.5em;
+	background: linear-gradient(135deg, #fffbe6, #ffe08a 80%, #f9bf3f 100%);
+	border-radius: 10px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+	margin-bottom: 0;
+	color: #000;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	display: flex;
+	align-items: flex-start;
+	transition: transform 0.3s cubic-bezier(.77,0,.175,1), box-shadow 0.3s cubic-bezier(.77,0,.175,1);
+	border: 1.5px solid #f9bf3f;
+}
+.skills-section .card-bounce:hover, .skills-section .skill-card:hover {
+	transform: translateY(-5px) scale(1.03);
+	box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+	z-index: 2;
+}
+.skills-section .card-bounce strong, .skills-section .skill-card strong {
+	font-weight: 700;
+	color: #2c98f0;
+	margin-right: 0.5em;
+}
+
+/* === Section: Timeline === */
+.timeline-section {
+	padding: 2em 0;
+}
+.timeline-section .timeline-centered {
+	position: relative;
+	margin-bottom: 30px;
+	padding-left: 0;
+}
+.timeline-section .timeline-centered:before {
+	content: "";
+	position: absolute;
+	left: 20px;
+	top: 0;
+	bottom: 0;
+	width: 4px;
+	background: #f9bf3f;
+	z-index: 0;
+}
+.timeline-section .timeline-entry {
+	position: relative;
+	margin: 30px 0 30px 0;
+	display: flex;
+	align-items: flex-start;
+	background: none;
+	border: none;
+}
+.timeline-section .timeline-entry-inner {
+	display: flex;
+	align-items: flex-start;
+	background: none;
+	border: none;
+}
+.timeline-section .timeline-icon {
+	position: relative;
+	z-index: 1;
+	margin-left: 0;
+	margin-right: 20px;
+	box-shadow: 0 0 0 5px #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #2c98f0;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.timeline-section .timeline-label.card-bounce {
+	margin-left: 0;
+	min-width: 300px;
+	background: linear-gradient(135deg, rgb(255, 221, 153), rgb(249, 191, 63));
+	border-radius: 10px;
+	padding: 1.5em;
+	color: #000;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+	transition: transform 0.3s cubic-bezier(.77,0,.175,1), box-shadow 0.3s cubic-bezier(.77,0,.175,1);
+}
+.timeline-section .timeline-label.card-bounce:hover {
+	transform: translateY(-5px) scale(1.03);
+	box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+	z-index: 2;
+}
+
+/* === Section: Repos === */
+.repo-section {
+	padding: 2em 0;
+}
+.repo-section .repo-card {
+	background-color: #fff;
+	border-radius: 8px;
+	padding: 20px;
+	margin: 0 0 1.5em 0;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s cubic-bezier(.77,0,.175,1), box-shadow 0.3s cubic-bezier(.77,0,.175,1);
+}
+.repo-section .repo-card:hover {
+	transform: translateY(-5px) scale(1.03);
+	box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+	z-index: 2;
+}
+
+/* === Remove global debug and !important rules === */
+/* (Removed previous .timeline-entry, .timeline-label, etc. !important rules) */
+
+/* === End Iteration 1 === */
 
 * {
 	box-sizing: border-box;
@@ -791,160 +931,80 @@ body.offcanvas .colorlib-nav-toggle {
 .timeline-centered {
 	position: relative;
 	margin-bottom: 30px;
-}
-
-.timeline-centered:before,
-.timeline-centered:after {
-	content: " ";
-	display: table;
-}
-
-.timeline-centered:after {
-	clear: both;
-}
-
-.timeline-centered:before,
-.timeline-centered:after {
-	content: " ";
-	display: table;
-}
-
-.timeline-centered:after {
-	clear: both;
+	padding-left: 0;
 }
 
 .timeline-centered:before {
 	content: "";
 	position: absolute;
-	display: block;
+	left: 20px;
+	top: 0;
+	bottom: 0;
 	width: 4px;
 	background: #f9bf3f;
-	top: 20px;
-	bottom: 20px;
-	margin-left: 29px;
+	z-index: 0;
 }
 
-.timeline-centered .timeline-entry {
+.timeline-entry {
 	position: relative;
-	margin-top: 5px;
-	margin-left: 30px;
-	margin-bottom: 10px;
-	clear: both;
+	margin: 30px 0 30px 0;
+	display: flex;
+	align-items: flex-start;
+	background: none;
+	border: none;
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner {
+.timeline-entry-inner {
+	display: flex;
+	align-items: flex-start;
+	background: none;
+	border: none;
+}
+
+.timeline-icon {
 	position: relative;
-	margin-left: -20px;
+	z-index: 1;
+	margin-left: 0;
+	margin-right: 20px;
+	box-shadow: 0 0 0 5px #fff;
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
-	display: block;
-	width: 40px;
-	height: 40px;
-	background: #2c98f0;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	border-radius: 50%;
-	text-align: center;
-	-moz-box-shadow: 0 0 0 5px #f2f3f7;
-	-webkit-box-shadow: 0 0 0 5px #f2f3f7;
-	box-shadow: 0 0 0 5px #f2f3f7;
-	line-height: 40px;
-	float: left;
-}
-.timeline-centered
-	.timeline-entry
-	.timeline-entry-inner
-	.timeline-icon.color-2 {
-	background: brown;
-	color: white;
-}
-.timeline-centered
-	.timeline-entry
-	.timeline-entry-inner
-	.timeline-icon.color-3 {
-	background: #f9bf3f;
-}
-.timeline-centered
-	.timeline-entry
-	.timeline-entry-inner
-	.timeline-icon.color-4 {
-	background: #a84cb8;
-}
-.timeline-centered
-	.timeline-entry
-	.timeline-entry-inner
-	.timeline-icon.color-5 {
-	background: #2fa499;
-}
-.timeline-centered
-	.timeline-entry
-	.timeline-entry-inner
-	.timeline-icon.color-none {
-	background: #fff;
-	width: 20px;
-	height: 20px;
-	margin-left: 10px;
-}
-
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
-	position: relative;
+.timeline-label {
+	margin-left: 0;
+	min-width: 300px;
 	background: linear-gradient(135deg, rgb(255, 221, 153), rgb(249, 191, 63));
-	color: #000;
-	padding: 1.5em;
-	margin-left: 60px;
-	-webkit-background-clip: padding-box;
-	-moz-background-clip: padding;
-	background-clip: padding-box;
 	border-radius: 10px;
+	padding: 1.5em;
+	color: #000;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {
-	content: "";
-	display: block;
-	position: absolute;
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 9px 9px 9px 0;
-	border-color: transparent #f2f3f7 transparent transparent;
-	left: 0;
-	top: 10px;
-	margin-left: -9px;
-}
-
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p + p {
+.timeline-entry .timeline-entry-inner .timeline-label p + p {
 	margin-top: 0px;
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 {
+.timeline-entry .timeline-entry-inner .timeline-label h2 {
 	margin-bottom: 10px;
 	font-size: 20px;
 	font-weight: 500;
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label .timeline-sublabel {
+.timeline-entry .timeline-entry-inner .timeline-label .timeline-sublabel {
 	font-weight: 600;
 	margin: 0 0px 5px;
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label .timeline-text {
+.timeline-entry .timeline-entry-inner .timeline-label .timeline-text {
 	margin-bottom: 0px;
 	font-size: 13px;
 	color: #000
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label div {
+.timeline-entry .timeline-entry-inner .timeline-label div {
 	margin-top: 5px;
 }
 
-.timeline-centered
-	.timeline-entry
-	.timeline-entry-inner
-	.timeline-label
-	h2
-	span {
+.timeline-entry .timeline-entry-inner .timeline-label h2 span {
 	-webkit-opacity: 0.4;
 	-moz-opacity: 0.4;
 	opacity: 0.4;
@@ -1452,18 +1512,10 @@ body.offcanvas .colorlib-nav-toggle {
 	padding: 0;
 	margin: 0;
 	list-style: none;
-	display: -moz-inline-stack;
-	display: inline-block;
-	zoom: 1;
-	*display: inline;
 }
 .colorlib-social li a {
 	font-size: 22px;
 	padding: 10px;
-	display: -moz-inline-stack;
-	display: inline-block;
-	zoom: 1;
-	*display: inline;
 	-webkit-border-radius: 7px;
 	-moz-border-radius: 7px;
 	-ms-border-radius: 7px;
@@ -1716,8 +1768,6 @@ body.offcanvas .colorlib-nav-toggle {
 	position: relative;
 	display: -moz-inline-stack;
 	display: inline-block;
-	zoom: 1;
-	*display: inline;
 	width: 30px;
 	height: 2px;
 	background-color: #000;
@@ -2197,3 +2247,185 @@ hr {
 		color: #f9bf3f;
 	}
   }
+
+/* --- Timeline Fixes --- */
+.timeline-entry,
+.timeline-entry-inner,
+.timeline-label,
+.timeline-icon {
+  opacity: 1 !important;
+  color: #000 !important;
+  background: #fff !important;
+  z-index: auto !important;
+  border: none !important;
+}
+
+.timeline-entry {
+  position: relative !important;
+  margin: 30px 0 30px 30px !important;
+  display: block !important;
+}
+
+.timeline-entry-inner {
+  position: relative !important;
+  margin-left: 0 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+.timeline-label {
+  margin-left: 60px !important;
+  background: linear-gradient(135deg, rgb(255, 221, 153), rgb(249, 191, 63)) !important;
+  border-radius: 10px !important;
+  padding: 1.5em !important;
+  color: #000 !important;
+  min-width: 300px;
+}
+
+.timeline-icon {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background: #2c98f0 !important;
+  color: #fff !important;
+  text-align: center !important;
+  line-height: 40px !important;
+  margin-right: 20px !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.animate-box {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(.77,0,.175,1);
+}
+
+.animate-box.animated {
+  opacity: 1;
+}
+
+.card-bounce {
+  transition: transform 0.3s cubic-bezier(.77,0,.175,1), box-shadow 0.3s cubic-bezier(.77,0,.175,1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.card-bounce:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+/* --- Skill Card Heading: black, no gold border --- */
+.skills-section .skill-heading {
+  color: #222;
+  border-bottom: none;
+  margin-bottom: 0.7em;
+}
+
+/* --- GitHub/Social Card: seamless white box --- */
+.github-card, .social-card {
+  background: #fff;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 1.2em 1.5em;
+  margin: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.github-card:hover, .social-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+}
+
+/* --- Social Cards Section --- */
+.social-cards-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+@media (max-width: 700px) {
+  .social-cards-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+}
+
+/* --- Stat Card and Stat Row for Social Cards (Consistent Sizing & Background) --- */
+.stat-card {
+  min-width: 260px;
+  max-width: 320px;
+  min-height: 150px;
+  background: linear-gradient(135deg, #fffbe6, #ffe08a 80%, #f9bf3f 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 1.2em 1.5em 1.1em 1.5em;
+  margin: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2em;
+  justify-content: center;
+  margin-top: 0.7em;
+  font-size: 0.98em;
+  color: #444;
+  width: 100%;
+  word-break: break-word;
+}
+.stat-row span {
+  font-size: 0.98em;
+  color: #444;
+  white-space: nowrap;
+}
+.stat-row strong {
+  font-weight: 600;
+  color: #222;
+  margin-right: 0.2em;
+}
+@media (max-width: 700px) {
+  .stat-card {
+    min-width: 90vw;
+    max-width: 98vw;
+    min-height: 120px;
+    padding: 1em 0.5em;
+  }
+  .stat-row {
+    font-size: 0.92em;
+    gap: 0.7em;
+  }
+}
+
+.resume-download-btn {
+  display: block;
+  margin: 1em auto 1.5em auto;
+  padding: 0.7em 1.5em;
+  background: #f9bf3f;
+  color: #222;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.resume-download-btn:hover, .resume-download-btn:focus {
+  background: #ffd966;
+  color: #000;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  text-decoration: none;
+}
