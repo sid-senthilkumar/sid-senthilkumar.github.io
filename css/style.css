@@ -2779,14 +2779,16 @@ strong {
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 700;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
   background: linear-gradient(135deg, #ffffff, #2c98f0, #f9bf3f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: titleGlow 3s ease-in-out infinite alternate;
+  text-shadow: 0 4px 20px rgba(44, 152, 240, 0.3);
+  letter-spacing: -0.02em;
 }
 
 @keyframes titleGlow {
