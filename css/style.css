@@ -3042,8 +3042,9 @@ strong {
 
 .thread-dropdown:hover,
 .thread-dropdown:focus {
-  box-shadow: 0 4px 12px rgba(249, 191, 63, 0.3);
+  box-shadow: 0 6px 20px rgba(44, 152, 240, 0.3);
   transform: translateY(-2px);
+  background: linear-gradient(135deg, #ffffff, #f0f8ff 50%, #f9bf3f 100%);
 }
 
 .thread-controls {
