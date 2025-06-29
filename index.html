@@ -1,11 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Sid Senthilkumar - Bioinformatician & AI/ML Specialist</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Portfolio webpage of Sid Senthilkumar - Bioinformatician specializing in AI/ML applications in computational biology" />
+    <meta
+      name="description"
+      content="Portfolio webpage of Sid Senthilkumar - Bioinformatician specializing in AI/ML applications in computational biology"
+    />
     <meta
       name="keywords"
       content="portfolio,website,personal website,github,projects,bioinformatics, computational biology, AI/ML, geometric deep learning, multi-omics, gene regulation"
@@ -31,228 +34,337 @@
   </head>
   <body>
     <div id="colorlib-page">
-      <div class="container-wrap">
-        <a
-          href="#"
-          class="js-colorlib-nav-toggle colorlib-nav-toggle"
-          data-toggle="collapse"
-          data-target="#navbar"
-          aria-expanded="false"
-          aria-controls="navbar"
-          ><i></i
-        ></a>
-        <aside
-          id="colorlib-aside"
-          role="complementary"
-          class="border js-fullheight no-print"
-        >
-          <div class="text-center">
-            <div class="author-img">
-              <img alt="profile-img" src="./logo.png" />
-            </div>
-            <h1 id="colorlib-logo"><a href="./index.html">Sid Senthilkumar</a></h1>
-            <a href="Sid-Senthilkumar-Resume.pdf" download class="resume-download-btn">Download Resume</a>
-          </div>
-          <nav
-            id="colorlib-main-menu"
-            role="navigation"
-            class="navbar"
-            style="padding-top: 2em"
+      <!-- Hero Section -->
+      <section class="hero-section" id="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+          <!-- Mobile Menu Toggle -->
+          <a
+            href="#"
+            class="mobile-nav-toggle"
+            data-toggle="collapse"
+            data-target="#navbar"
+            aria-expanded="false"
+            aria-controls="navbar"
           >
-            <div id="navbar" class="collapse">
-              <ul>
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+
+          <!-- Navigation -->
+          <nav class="hero-nav" id="colorlib-main-menu" role="navigation">
+            <div id="navbar" class="nav-collapse">
+              <ul class="nav-menu">
                 <li><a href="#" data-nav-section="about">About</a></li>
                 <li><a href="#" data-nav-section="skills">Skills</a></li>
-                <li><a href="#" data-nav-section="experience">Work Experience</a></li>
+                <li>
+                  <a href="#" data-nav-section="experience">Experience</a>
+                </li>
                 <li><a href="#" data-nav-section="education">Education</a></li>
                 <li><a href="#" data-nav-section="repos">Projects</a></li>
+                <li><a href="#" data-nav-section="blog">Blog</a></li>
                 <li><a href="#" data-nav-section="contact">Contact</a></li>
               </ul>
             </div>
           </nav>
-        </aside>
-        <div id="colorlib-main">
-          <section class="colorlib-about" data-section="about">
-            <div class="colorlib-narrow-content">
-              <div class="row animate-box" data-animate-effect="fadeInLeft">
-                <div class="about-desc">
-                  <h1>About</h1>
-                  <div id="bio"></div>
+
+          <!-- Hero Main Content -->
+          <div class="hero-main">
+            <div class="hero-content-layout">
+              <!-- Left Content -->
+              <div class="hero-text-content">
+                <div class="hero-greeting">
+                  <span class="greeting-text">Hello, I'm</span>
                 </div>
-              </div>
-            </div>
-          </section>
-          <!-- Social Cards Section (top, after About) -->
-          <section class="social-cards-section">
-            <!-- GitHub Card -->
-            <div class="social-card stat-card">
-              <a href="https://github.com/sid-senthilkumar" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-                <div style="display:flex;align-items:center;gap:0.7em;">
-                  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width:44px;height:44px;border-radius:50%;background:#eee;">
-                  <div>
-                    <div style="font-weight:700;font-size:1.1em;">Sid Senthilkumar</div>
-                    <div style="font-size:0.95em;color:#555;">@sid-senthilkumar</div>
-                  </div>
-                </div>
-                <div class="stat-row">
-                  <span><strong>Repositories</strong> 19</span>
-                  <span><strong>Followers</strong> 0</span>
-                </div>
-              </a>
-            </div>
-            <!-- Twitter/X Card -->
-            <div class="social-card stat-card">
-              <a href="https://twitter.com/hopelesslystoic" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-                <div style="display:flex;align-items:center;gap:0.7em;">
-                  <img src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Twitter/X" style="width:44px;height:44px;border-radius:50%;background:#eee;">
-                  <div>
-                    <div style="font-weight:700;font-size:1.1em;">Twitter/X</div>
-                    <div style="font-size:0.95em;color:#555;">@hopelesslystoic</div>
-                  </div>
-                </div>
-                <div class="stat-row">
-                  <span><strong>Posts</strong> 13.9K</span>
-                  <span><strong>Followers</strong> 1,261</span>
-                </div>
-              </a>
-            </div>
-            <!-- LinkedIn Card -->
-            <div class="social-card stat-card">
-              <a href="https://www.linkedin.com/in/sidkrishnasenthilkumar/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-                <div style="display:flex;align-items:center;gap:0.7em;">
-                  <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width:44px;height:44px;border-radius:50%;background:#eee;">
-                  <div>
-                    <div style="font-weight:700;font-size:1.1em;">LinkedIn</div>
-                    <div style="font-size:0.95em;color:#555;">sidkrishnasenthilkumar</div>
-                  </div>
-                </div>
-                <div class="stat-row">
-                  <span><strong>Connections</strong> 500+</span>
-                  <span><strong>Followers</strong> 1,000+</span>
-                </div>
-              </a>
-            </div>
-          </section>
-          <section class="colorlib-skills skills-section" data-section="skills">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Skills</h1>
-                </div>
-              </div>
-              <div id="skills" class="row"></div>
-            </div>
-          </section>
-          <section class="colorlib-profile" data-section="profile-card">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="profile-cards">
-                  <!-- Removed old GitHub card widget from profile-card section -->
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="colorlib-experience repo-section" data-section="repos">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
+                <h1 class="hero-title">Sid Senthilkumar</h1>
+                <p class="hero-subtitle">Bioinformatician & AI/ML Specialist</p>
+                <p class="hero-description">
+                  Specializing in AI/ML applications in computational biology,
+                  with a focus on Geometric Deep Learning and Multi-Omics
+                  Integration.
+                </p>
+
+                <div class="hero-actions">
                   <a
-                    href="https://github.com/sid-senthilkumar"
-                    target="_blank"
-                    rel="noopener"
-                    style="color: inherit"
+                    href="Sid-Senthilkumar-Resume.pdf"
+                    download
+                    class="hero-btn primary"
                   >
-                    <h1>
-                      Top <span style="color: #f9bf3f">Repositories</span>
-                      <i
-                        class="fa fa-external-link"
-                        aria-hidden="true"
-                        style="font-size: 30px"
-                      ></i>
-                    </h1>
+                    <i class="fa fa-download"></i> Download Resume
+                  </a>
+                  <a
+                    href="#"
+                    data-nav-section="contact"
+                    class="hero-btn secondary"
+                  >
+                    <i class="fa fa-envelope"></i> Get In Touch
                   </a>
                 </div>
               </div>
-              <ul
-                id="accordion"
-                class="accordion animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <li class="open">
-                  <ul
-                    id="repos"
-                    class=""
-                    style="display: block; padding: 10px"
-                  ></ul>
-                </li>
-              </ul>
-            </div>
-          </section>
-          <section class="colorlib-experience timeline-section" data-section="experience">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box fadeInLeft animated"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Work <span style="color: #f9bf3f">Experience</span></h1>
+
+              <!-- Right Image -->
+              <div class="hero-image-section">
+                <div class="hero-image-container">
+                  <!-- To test GitHub PNG, replace src with: https://raw.githubusercontent.com/your-username/your-repo/main/your-image.png -->
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F87f34bc1e79f4468b12c01d21730619e%2F04c73bff1c49412e8c29861872112536?format=png&quality=100"
+                    alt="Sid Senthilkumar"
+                    class="hero-portrait"
+                    id="hero-image"
+                  />
+                  <div class="hero-accent-shape"></div>
                 </div>
               </div>
-              <div class="timeline-centered" id="experience"></div>
             </div>
-          </section>
-          <section class="colorlib-education timeline-section" data-section="education">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box fadeInLeft animated"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Education</h1>
-                </div>
-              </div>
-              <div class="timeline-centered" id="education"></div>
-            </div>
-          </section>
-          <section class="colorlib-contact" data-section="contact">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Contact</h1>
-                </div>
-                <p>
-                  Feel free to email me at <strong>siddharthkrishna.ssk@gmail.com</strong> for tech
-                  discussions, business opportunities, or just to say hello—I'd
-                  love to hear from you!
-                </p>
-              </div>
-            </div>
-          </section>
-          <section class="colorlib-footer no-print" data-section="footer">
-            <div class="colorlib-narrow-content">
-              <footer class="footer" id="footer"></footer>
-            </div>
-          </section>
-          <!-- Future: Blog/Projects Page Placeholder -->
-          <!-- <section class="blog-section" data-section="blog-projects">
-            <div class="container-wrap">
-              <h2 class="colorlib-heading">Blog & Projects</h2>
-              <!-- Blog/project cards will go here in the future -->
-            </div>
-          </section> -->
+          </div>
+
+          <!-- Scroll Down Indicator -->
+          <div class="scroll-indicator">
+            <a href="#" data-nav-section="about">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+          </div>
         </div>
+      </section>
+
+      <!-- Main Content -->
+      <div id="colorlib-main" class="main-content">
+        <section class="colorlib-about" data-section="about">
+          <div class="colorlib-narrow-content">
+            <div class="row animate-box" data-animate-effect="fadeInLeft">
+              <div class="about-desc">
+                <h1>About</h1>
+                <div id="bio"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Social Cards Section (top, after About) -->
+        <section class="social-cards-section">
+          <!-- GitHub Card -->
+          <div class="social-card stat-card">
+            <a
+              href="https://github.com/sid-senthilkumar"
+              target="_blank"
+              rel="noopener"
+              style="text-decoration: none; color: inherit"
+            >
+              <div style="display: flex; align-items: center; gap: 0.7em">
+                <img
+                  src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                  alt="GitHub"
+                  style="
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 50%;
+                    background: #eee;
+                  "
+                />
+                <div>
+                  <div style="font-weight: 700; font-size: 1.1em">
+                    Sid Senthilkumar
+                  </div>
+                  <div style="font-size: 0.95em; color: #555">
+                    @sid-senthilkumar
+                  </div>
+                </div>
+              </div>
+              <div class="stat-row">
+                <span><strong>Repositories</strong> 19</span>
+                <span><strong>Followers</strong> 0</span>
+              </div>
+            </a>
+          </div>
+          <!-- Twitter/X Card -->
+          <div class="social-card stat-card">
+            <a
+              href="https://twitter.com/hopelesslystoic"
+              target="_blank"
+              rel="noopener"
+              style="text-decoration: none; color: inherit"
+            >
+              <div style="display: flex; align-items: center; gap: 0.7em">
+                <img
+                  src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png"
+                  alt="Twitter/X"
+                  style="
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 50%;
+                    background: #eee;
+                  "
+                />
+                <div>
+                  <div style="font-weight: 700; font-size: 1.1em">
+                    Twitter/X
+                  </div>
+                  <div style="font-size: 0.95em; color: #555">
+                    @hopelesslystoic
+                  </div>
+                </div>
+              </div>
+              <div class="stat-row">
+                <span><strong>Posts</strong> 13.9K</span>
+                <span><strong>Followers</strong> 1,261</span>
+              </div>
+            </a>
+          </div>
+          <!-- LinkedIn Card -->
+          <div class="social-card stat-card">
+            <a
+              href="https://www.linkedin.com/in/sidkrishnasenthilkumar/"
+              target="_blank"
+              rel="noopener"
+              style="text-decoration: none; color: inherit"
+            >
+              <div style="display: flex; align-items: center; gap: 0.7em">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                  alt="LinkedIn"
+                  style="
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 50%;
+                    background: #eee;
+                  "
+                />
+                <div>
+                  <div style="font-weight: 700; font-size: 1.1em">LinkedIn</div>
+                  <div style="font-size: 0.95em; color: #555">
+                    sidkrishnasenthilkumar
+                  </div>
+                </div>
+              </div>
+              <div class="stat-row">
+                <span><strong>Connections</strong> 500+</span>
+                <span><strong>Followers</strong> 1,000+</span>
+              </div>
+            </a>
+          </div>
+        </section>
+        <section class="colorlib-skills skills-section" data-section="skills">
+          <div class="colorlib-narrow-content">
+            <div
+              class="row row-bottom-padded-sm animate-box"
+              data-animate-effect="fadeInLeft"
+            >
+              <div class="about-desc">
+                <h1>Skills</h1>
+              </div>
+            </div>
+            <div id="skills" class="row"></div>
+          </div>
+        </section>
+        <section class="colorlib-profile" data-section="profile-card">
+          <div class="colorlib-narrow-content">
+            <div
+              class="row row-bottom-padded-sm animate-box"
+              data-animate-effect="fadeInLeft"
+            >
+              <div class="profile-cards">
+                <!-- Removed old GitHub card widget from profile-card section -->
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="colorlib-experience repo-section" data-section="repos">
+          <div class="colorlib-narrow-content">
+            <div
+              class="row row-bottom-padded-sm animate-box"
+              data-animate-effect="fadeInLeft"
+            >
+              <div class="about-desc">
+                <a
+                  href="https://github.com/sid-senthilkumar"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: inherit"
+                >
+                  <h1>
+                    Top <span style="color: #f9bf3f">Repositories</span>
+                    <i
+                      class="fa fa-external-link"
+                      aria-hidden="true"
+                      style="font-size: 30px"
+                    ></i>
+                  </h1>
+                </a>
+              </div>
+            </div>
+            <ul
+              id="accordion"
+              class="accordion animate-box"
+              data-animate-effect="fadeInLeft"
+            >
+              <li class="open">
+                <ul
+                  id="repos"
+                  class=""
+                  style="display: block; padding: 10px"
+                ></ul>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section
+          class="colorlib-experience timeline-section"
+          data-section="experience"
+        >
+          <div class="colorlib-narrow-content">
+            <div
+              class="row row-bottom-padded-sm animate-box fadeInLeft animated"
+              data-animate-effect="fadeInLeft"
+            >
+              <div class="about-desc">
+                <h1>Work <span style="color: #f9bf3f">Experience</span></h1>
+              </div>
+            </div>
+            <div class="timeline-centered" id="experience"></div>
+          </div>
+        </section>
+        <section
+          class="colorlib-education timeline-section"
+          data-section="education"
+        >
+          <div class="colorlib-narrow-content">
+            <div
+              class="row row-bottom-padded-sm animate-box fadeInLeft animated"
+              data-animate-effect="fadeInLeft"
+            >
+              <div class="about-desc">
+                <h1>Education</h1>
+              </div>
+            </div>
+            <div class="timeline-centered" id="education"></div>
+          </div>
+        </section>
+        <section class="colorlib-contact" data-section="contact">
+          <div class="colorlib-narrow-content">
+            <div
+              class="row row-bottom-padded-sm animate-box"
+              data-animate-effect="fadeInLeft"
+            >
+              <div class="about-desc">
+                <h1>Contact</h1>
+              </div>
+              <p>
+                Feel free to email me at
+                <strong>siddharthkrishna.ssk@gmail.com</strong> for tech
+                discussions, business opportunities, or just to say hello—I'd
+                love to hear from you!
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="colorlib-footer no-print" data-section="footer">
+          <div class="colorlib-narrow-content">
+            <footer class="footer" id="footer"></footer>
+          </div>
+        </section>
+        <!-- Blog section will be dynamically inserted here by blog-system.js -->
       </div>
     </div>
     <script src="js/jquery.min.js"></script>
@@ -260,5 +372,6 @@
     <script src="js/main.js"></script>
     <script type="module" src="index.js"></script>
     <script type="module" src="js/profile-card.js"></script>
+    <script type="module" src="js/blog-system.js"></script>
   </body>
 </html>
