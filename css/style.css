@@ -2686,48 +2686,83 @@ strong {
 }
 
 .hero-avatar {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 2rem auto;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto 3rem auto;
   border-radius: 50%;
-  border: 6px solid #2c98f0;
+  border: 8px solid #2c98f0;
   overflow: hidden;
   box-shadow:
-    0 20px 60px rgba(44, 152, 240, 0.3),
-    0 0 0 20px rgba(44, 152, 240, 0.1);
-  transition: all 0.4s ease;
+    0 30px 80px rgba(44, 152, 240, 0.4),
+    0 0 0 30px rgba(44, 152, 240, 0.15),
+    0 0 0 60px rgba(44, 152, 240, 0.05);
+  transition: all 0.5s ease;
   position: relative;
+  z-index: 10;
 }
 
 .hero-avatar::before {
   content: "";
   position: absolute;
-  top: -6px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
-  background: linear-gradient(45deg, #2c98f0, #44a4f2, #2c98f0);
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background: linear-gradient(45deg, #2c98f0, #44a4f2, #1e7fd4, #2c98f0);
   border-radius: 50%;
   z-index: -1;
-  animation: avatarGlow 3s ease-in-out infinite alternate;
+  animation: avatarGlow 4s ease-in-out infinite alternate;
+  background-size: 200% 200%;
+}
+
+.hero-avatar::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(
+    circle,
+    rgba(44, 152, 240, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  z-index: -2;
+  animation: pulseGlow 3s ease-in-out infinite;
 }
 
 @keyframes avatarGlow {
   0% {
     opacity: 0.8;
     transform: scale(1);
+    background-position: 0% 50%;
   }
   100% {
     opacity: 1;
-    transform: scale(1.02);
+    transform: scale(1.03);
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
   }
 }
 
 .hero-avatar:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
   box-shadow:
-    0 30px 80px rgba(44, 152, 240, 0.4),
-    0 0 0 30px rgba(44, 152, 240, 0.15);
+    0 40px 100px rgba(44, 152, 240, 0.5),
+    0 0 0 40px rgba(44, 152, 240, 0.2),
+    0 0 0 80px rgba(44, 152, 240, 0.08);
 }
 
 .hero-avatar img {
