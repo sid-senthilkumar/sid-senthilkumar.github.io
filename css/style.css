@@ -2676,18 +2676,48 @@ strong {
 }
 
 .hero-avatar {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto 2rem auto;
   border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.3);
+  border: 6px solid #2c98f0;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  box-shadow:
+    0 20px 60px rgba(44, 152, 240, 0.3),
+    0 0 0 20px rgba(44, 152, 240, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.hero-avatar::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  background: linear-gradient(45deg, #2c98f0, #44a4f2, #2c98f0);
+  border-radius: 50%;
+  z-index: -1;
+  animation: avatarGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes avatarGlow {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
 }
 
 .hero-avatar:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow:
+    0 30px 80px rgba(44, 152, 240, 0.4),
+    0 0 0 30px rgba(44, 152, 240, 0.15);
 }
 
 .hero-avatar img {
