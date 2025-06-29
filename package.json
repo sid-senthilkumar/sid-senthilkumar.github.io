@@ -1,0 +1,21 @@
+{
+  "name": "sid-senthilkumar-portfolio",
+  "version": "1.0.0",
+  "description": "Sid Senthilkumar's portfolio website with blog system",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server . -p 3000 -c-1",
+    "start": "npx http-server . -p 3000",
+    "build": "echo 'No build step needed for static site'"
+  },
+  "keywords": [
+    "portfolio",
+    "bioinformatics",
+    "blog"
+  ],
+  "author": "Sid Senthilkumar",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
