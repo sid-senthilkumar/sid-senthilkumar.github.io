@@ -2801,20 +2801,31 @@ strong {
 }
 
 .hero-subtitle {
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0 0 1.5rem 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 2rem 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(44, 152, 240, 0.8)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0 0 2.5rem 0;
-  max-width: 500px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 3rem 0;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-weight: 300;
 }
 
 /* Hero Action Buttons */
