@@ -34,48 +34,31 @@
   </head>
   <body>
     <div id="colorlib-page">
-      <div class="container-wrap">
-        <a
-          href="#"
-          class="js-colorlib-nav-toggle colorlib-nav-toggle"
-          data-toggle="collapse"
-          data-target="#navbar"
-          aria-expanded="false"
-          aria-controls="navbar"
-          ><i></i
-        ></a>
-        <aside
-          id="colorlib-aside"
-          role="complementary"
-          class="border js-fullheight no-print"
-        >
-          <div class="text-center">
-            <div class="author-img">
-              <img alt="profile-img" src="./logo.png" />
-            </div>
-            <h1 id="colorlib-logo">
-              <a href="./index.html">Sid Senthilkumar</a>
-            </h1>
-            <a
-              href="Sid-Senthilkumar-Resume.pdf"
-              download
-              class="resume-download-btn"
-              >Download Resume</a
-            >
-          </div>
-          <nav
-            id="colorlib-main-menu"
-            role="navigation"
-            class="navbar"
-            style="padding-top: 2em"
+      <!-- Hero Section -->
+      <section class="hero-section" id="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+          <!-- Mobile Menu Toggle -->
+          <a
+            href="#"
+            class="mobile-nav-toggle"
+            data-toggle="collapse"
+            data-target="#navbar"
+            aria-expanded="false"
+            aria-controls="navbar"
           >
-            <div id="navbar" class="collapse">
-              <ul>
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+
+          <!-- Navigation -->
+          <nav class="hero-nav" id="colorlib-main-menu" role="navigation">
+            <div id="navbar" class="nav-collapse">
+              <ul class="nav-menu">
                 <li><a href="#" data-nav-section="about">About</a></li>
                 <li><a href="#" data-nav-section="skills">Skills</a></li>
-                <li>
-                  <a href="#" data-nav-section="experience">Work Experience</a>
-                </li>
+                <li><a href="#" data-nav-section="experience">Experience</a></li>
                 <li><a href="#" data-nav-section="education">Education</a></li>
                 <li><a href="#" data-nav-section="repos">Projects</a></li>
                 <li><a href="#" data-nav-section="blog">Blog</a></li>
@@ -83,8 +66,41 @@
               </ul>
             </div>
           </nav>
-        </aside>
-        <div id="colorlib-main">
+
+          <!-- Hero Main Content -->
+          <div class="hero-main">
+            <div class="hero-profile">
+              <div class="hero-avatar">
+                <img alt="Sid Senthilkumar" src="./logo.png" />
+              </div>
+              <h1 class="hero-title">Sid Senthilkumar</h1>
+              <p class="hero-subtitle">Bioinformatician & AI/ML Specialist</p>
+              <p class="hero-description">Specializing in AI/ML applications in computational biology, with a focus on Geometric Deep Learning and Multi-Omics Integration.</p>
+
+              <div class="hero-actions">
+                <a href="Sid-Senthilkumar-Resume.pdf" download class="hero-btn primary">
+                  <i class="fa fa-download"></i> Download Resume
+                </a>
+                <a href="#" data-nav-section="contact" class="hero-btn secondary">
+                  <i class="fa fa-envelope"></i> Get In Touch
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scroll Down Indicator -->
+          <div class="scroll-indicator">
+            <a href="#" data-nav-section="about">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <div id="colorlib-main" class="main-content">
           <section class="colorlib-about" data-section="about">
             <div class="colorlib-narrow-content">
               <div class="row animate-box" data-animate-effect="fadeInLeft">
