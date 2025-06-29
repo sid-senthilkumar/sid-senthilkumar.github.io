@@ -2461,9 +2461,9 @@ strong {
   min-width: 260px;
   max-width: 320px;
   min-height: 150px;
-  background: linear-gradient(135deg, #fffbe6, #ffe08a 80%, #f9bf3f 100%);
+  background: linear-gradient(135deg, #f0f8ff, #e6f3ff 50%, #f9bf3f 100%);
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(44, 152, 240, 0.15);
   padding: 1.2em 1.5em 1.1em 1.5em;
   margin: 0.5em;
   display: flex;
@@ -2471,9 +2471,10 @@ strong {
   align-items: center;
   justify-content: center;
   transition:
-    transform 0.2s,
-    box-shadow 0.2s;
+    transform 0.3s,
+    box-shadow 0.3s;
   box-sizing: border-box;
+  border: 1px solid rgba(44, 152, 240, 0.2);
 }
 .stat-row {
   display: flex;
