@@ -383,9 +383,13 @@ class BlogSystem {
   }
 }
 
-// Initialize blog system when DOM is loaded
-document.addEventListener("DOMContentLoaded", () => {
-  window.blogSystem = new BlogSystem();
+// Initialize blog system when window loads (after all other scripts)
+window.addEventListener("load", () => {
+  // Add a small delay to ensure all other initialization is complete
+  setTimeout(() => {
+    window.blogSystem = new BlogSystem();
+    window.blogSystem.init();
+  }, 500);
 });
 
 // Export for potential external use
