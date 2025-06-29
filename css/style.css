@@ -731,8 +731,8 @@ body.offcanvas .colorlib-nav-toggle {
 .colorlib-services,
 .colorlib-footer,
 .colorlib-contact {
-  padding-top: 3em;
-  padding-bottom: 0em;
+  padding-top: 4em;
+  padding-bottom: 2em;
   clear: both;
   width: 100%;
   display: block;
