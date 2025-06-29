@@ -3016,19 +3016,7 @@ strong {
     font-size: 3.5rem;
   }
 
-  .floating-stat {
-    padding: 1rem 1.5rem;
-  }
-
-  .experience-stat {
-    right: -40px;
-    top: 20%;
-  }
-
-  .projects-stat {
-    left: -50px;
-    bottom: 25%;
-  }
+  /* Removed floating stat styles for cleaner design */
 
   .nav-menu {
     gap: 0.3rem;
