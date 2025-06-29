@@ -3113,37 +3113,7 @@ strong {
     margin-bottom: 1.5rem;
   }
 
-  .hero-stats {
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .stat-item {
-    padding: 1rem;
-  }
-
-  .floating-stat {
-    padding: 0.8rem 1.2rem;
-    border-radius: 15px;
-  }
-
-  .floating-stat .stat-number {
-    font-size: 1.8rem;
-  }
-
-  .floating-stat .stat-text {
-    font-size: 0.8rem;
-  }
-
-  .experience-stat {
-    right: -20px;
-    top: 15%;
-  }
-
-  .projects-stat {
-    left: -30px;
-    bottom: 20%;
-  }
+  /* Removed stat-related mobile styles for cleaner design */
 
   .hero-actions {
     flex-direction: column;
