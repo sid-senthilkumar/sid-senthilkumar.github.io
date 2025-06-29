@@ -2552,9 +2552,15 @@ strong {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #2c98f0 0%, #667eea 50%, #f9bf3f 100%);
+  background: linear-gradient(
+    135deg,
+    #1a1a1a 0%,
+    #2c98f0 30%,
+    #667eea 60%,
+    #f9bf3f 100%
+  );
   background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  animation: gradientShift 20s ease infinite;
   z-index: 0;
 }
 
