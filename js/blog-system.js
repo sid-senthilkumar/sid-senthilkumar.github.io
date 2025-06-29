@@ -197,28 +197,40 @@ class BlogSystem {
     });
 
     // Linked post hover and click
-    document.addEventListener('mouseenter', (e) => {
-      if (e.target && e.target.classList && e.target.classList.contains('linked-post')) {
-        this.showParallelThread(e.target.getAttribute('data-linked-post'));
-      }
-    }, true);
+    document.addEventListener(
+      "mouseenter",
+      (e) => {
+        if (
+          e.target &&
+          e.target.classList &&
+          e.target.classList.contains("linked-post")
+        ) {
+          this.showParallelThread(e.target.getAttribute("data-linked-post"));
+        }
+      },
+      true,
+    );
 
-    document.addEventListener('mouseleave', (e) => {
-      if (e.target && e.target.classList && e.target.classList.contains('linked-post')) {
-        this.hideParallelThread();
-      }
-    }, true);
-
-    document.addEventListener('click', (e) => {
-      if (e.target && e.target.classList && e.target.classList.contains('linked-post')) {
-        const linkedPostId = e.target.getAttribute('data-linked-post');
-        this.jumpToLinkedPost(linkedPostId);
-      }
-    });
+    document.addEventListener(
+      "mouseleave",
+      (e) => {
+        if (
+          e.target &&
+          e.target.classList &&
+          e.target.classList.contains("linked-post")
+        ) {
+          this.hideParallelThread();
+        }
+      },
+      true,
     );
 
     document.addEventListener("click", (e) => {
-      if (e.target.classList.contains("linked-post")) {
+      if (
+        e.target &&
+        e.target.classList &&
+        e.target.classList.contains("linked-post")
+      ) {
         const linkedPostId = e.target.getAttribute("data-linked-post");
         this.jumpToLinkedPost(linkedPostId);
       }
