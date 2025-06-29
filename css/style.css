@@ -111,7 +111,7 @@ body {
   top: 0;
   bottom: 0;
   width: 4px;
-  background: #f9bf3f;
+  background: linear-gradient(180deg, #2c98f0, #f9bf3f);
   z-index: 0;
 }
 .timeline-section .timeline-entry {
