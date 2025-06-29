@@ -3,7 +3,9 @@
 
   var isMobile = {
     any: function () {
-      return /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
+      return /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(
+        navigator.userAgent,
+      );
     },
   };
 
@@ -25,7 +27,7 @@
             $(this.element).addClass("animated");
           }
         },
-        { offset: "90%" }
+        { offset: "90%" },
       );
     }
   };
@@ -43,21 +45,32 @@
               setTimeout(
                 function () {
                   var effect = el.data("animate-effect");
-                  el.addClass(effect ? `${effect} animated` : "fadeInUp animated");
+                  el.addClass(
+                    effect ? `${effect} animated` : "fadeInUp animated",
+                  );
                   el.removeClass("item-animate");
                 },
                 k * 200,
-                "easeInOutExpo"
+                "easeInOutExpo",
               );
             });
           }, 100);
         }
       },
-      { offset: "85%" }
+      { offset: "85%" },
     );
   };
 
   var burgerMenu = function () {
+    // Handle new mobile navigation toggle
+    $(".mobile-nav-toggle").on("click", function (event) {
+      event.preventDefault();
+      var $this = $(this);
+      $(".hero-nav").toggleClass("active");
+      $this.toggleClass("active");
+    });
+
+    // Keep old functionality for backward compatibility
     $(".js-colorlib-nav-toggle").on("click", function (event) {
       event.preventDefault();
       var $this = $(this);
@@ -67,15 +80,36 @@
   };
 
   var mobileMenuOutsideClick = function () {
+    // Handle new hero navigation outside clicks
     $(document).click(function (e) {
-      var container = $("#colorlib-aside, .js-colorlib-nav-toggle");
-      if (!container.is(e.target) && container.has(e.target).length === 0) {
+      var heroNavContainer = $(".hero-nav, .mobile-nav-toggle");
+      var oldContainer = $("#colorlib-aside, .js-colorlib-nav-toggle");
+
+      // Hero navigation
+      if (
+        !heroNavContainer.is(e.target) &&
+        heroNavContainer.has(e.target).length === 0
+      ) {
+        $(".hero-nav").removeClass("active");
+        $(".mobile-nav-toggle").removeClass("active");
+      }
+
+      // Old navigation (backward compatibility)
+      if (
+        !oldContainer.is(e.target) &&
+        oldContainer.has(e.target).length === 0
+      ) {
         $("body").removeClass("offcanvas");
         $(".js-colorlib-nav-toggle").removeClass("active");
       }
     });
 
     $(window).scroll(function () {
+      // Close mobile menu on scroll
+      $(".hero-nav").removeClass("active");
+      $(".mobile-nav-toggle").removeClass("active");
+
+      // Old functionality
       if ($("body").hasClass("offcanvas")) {
         $("body").removeClass("offcanvas");
         $(".js-colorlib-nav-toggle").removeClass("active");
@@ -93,7 +127,7 @@
           {
             scrollTop: $('[data-section="' + section + '"]').offset().top - 55,
           },
-          500
+          500,
         );
       }
 
@@ -130,7 +164,7 @@
       },
       {
         offset: "150px",
-      }
+      },
     );
 
     $section.waypoint(
@@ -143,7 +177,7 @@
         offset: function () {
           return -$(this.element).height() + 155;
         },
-      }
+      },
     );
   };
 
@@ -168,7 +202,8 @@ var Accordion = function (el, multiple) {
 
 Accordion.prototype.dropdown = function (e) {
   var $el = e.data.el;
-  var $this = $(this), $next = $this.next();
+  var $this = $(this),
+    $next = $this.next();
 
   $next.slideToggle();
   $this.parent().toggleClass("open");
