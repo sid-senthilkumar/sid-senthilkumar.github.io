@@ -80,15 +80,36 @@
   };
 
   var mobileMenuOutsideClick = function () {
+    // Handle new hero navigation outside clicks
     $(document).click(function (e) {
-      var container = $("#colorlib-aside, .js-colorlib-nav-toggle");
-      if (!container.is(e.target) && container.has(e.target).length === 0) {
+      var heroNavContainer = $(".hero-nav, .mobile-nav-toggle");
+      var oldContainer = $("#colorlib-aside, .js-colorlib-nav-toggle");
+
+      // Hero navigation
+      if (
+        !heroNavContainer.is(e.target) &&
+        heroNavContainer.has(e.target).length === 0
+      ) {
+        $(".hero-nav").removeClass("active");
+        $(".mobile-nav-toggle").removeClass("active");
+      }
+
+      // Old navigation (backward compatibility)
+      if (
+        !oldContainer.is(e.target) &&
+        oldContainer.has(e.target).length === 0
+      ) {
         $("body").removeClass("offcanvas");
         $(".js-colorlib-nav-toggle").removeClass("active");
       }
     });
 
     $(window).scroll(function () {
+      // Close mobile menu on scroll
+      $(".hero-nav").removeClass("active");
+      $(".mobile-nav-toggle").removeClass("active");
+
+      // Old functionality
       if ($("body").hasClass("offcanvas")) {
         $("body").removeClass("offcanvas");
         $(".js-colorlib-nav-toggle").removeClass("active");
