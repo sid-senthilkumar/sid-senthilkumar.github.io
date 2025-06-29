@@ -518,8 +518,8 @@ figure figcaption {
 }
 
 #colorlib-main {
-  width: calc(100% - 340px);
-  float: right;
+  width: 100%;
+  float: none;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
