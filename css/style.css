@@ -3060,16 +3060,29 @@ strong {
 
 @media screen and (max-width: 480px) {
   .hero-avatar {
-    width: 120px;
-    height: 120px;
+    width: 220px;
+    height: 220px;
+    margin-bottom: 1.5rem;
   }
 
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
   }
 
   .hero-content {
     padding: 1rem;
+  }
+
+  .hero-main {
+    min-height: 50vh;
   }
 }
 
