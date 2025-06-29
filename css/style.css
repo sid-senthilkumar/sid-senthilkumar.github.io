@@ -2800,35 +2800,23 @@ strong {
 .hero-accent-shape::before {
   content: "";
   position: absolute;
-  width: 200px;
-  height: 200px;
-  background: rgba(249, 191, 63, 0.3);
+  width: 100px;
+  height: 100px;
+  background: rgba(44, 152, 240, 0.1);
   border-radius: 50%;
-  top: -50px;
-  left: -50px;
-  animation: float 6s ease-in-out infinite;
+  top: -30px;
+  left: -30px;
 }
 
 .hero-accent-shape::after {
   content: "";
   position: absolute;
-  width: 150px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.1);
+  width: 80px;
+  height: 80px;
+  background: rgba(249, 191, 63, 0.1);
   border-radius: 50%;
-  bottom: -30px;
-  right: -30px;
-  animation: float 4s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(180deg);
-  }
+  bottom: -20px;
+  right: -20px;
 }
 
 /* Removed floating stats and stat items for cleaner design */
