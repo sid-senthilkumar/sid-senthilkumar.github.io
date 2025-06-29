@@ -3028,8 +3028,8 @@ strong {
 }
 
 .thread-dropdown {
-  background: linear-gradient(135deg, #fffbe6, #ffe08a 80%, #f9bf3f 100%);
-  border: 2px solid #f9bf3f;
+  background: linear-gradient(135deg, #f0f8ff, #e6f3ff 50%, #f9bf3f 100%);
+  border: 2px solid #2c98f0;
   border-radius: 8px;
   padding: 0.7em 1.2em;
   font-size: 1em;
