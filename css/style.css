@@ -3109,17 +3109,49 @@ strong {
 
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
-  .hero-avatar {
+  .hero-content-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-text-content {
+    order: 2;
+    text-align: center;
+  }
+
+  .hero-image-section {
+    order: 1;
+    height: 500px;
+  }
+
+  .hero-portrait {
     width: 350px;
-    height: 350px;
+    height: 450px;
+  }
+
+  .hero-accent-shape {
+    width: 400px;
+    height: 400px;
+    right: -50px;
   }
 
   .hero-title {
-    font-size: 3.2rem;
+    font-size: 3.5rem;
   }
 
-  .hero-subtitle {
-    font-size: 1.4rem;
+  .floating-stat {
+    padding: 1rem 1.5rem;
+  }
+
+  .experience-stat {
+    right: -40px;
+    top: 20%;
+  }
+
+  .projects-stat {
+    left: -50px;
+    bottom: 25%;
   }
 
   .nav-menu {
