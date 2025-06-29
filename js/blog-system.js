@@ -65,12 +65,6 @@ class BlogSystem {
     const footerSection =
       document.querySelector(".colorlib-footer").parentElement;
     footerSection.parentNode.insertBefore(blogSection, footerSection);
-
-    // Add navigation link
-    const navList = document.querySelector("#colorlib-main-menu ul");
-    const blogNavItem = document.createElement("li");
-    blogNavItem.innerHTML = '<a href="#" data-nav-section="blog">Blog</a>';
-    navList.appendChild(blogNavItem);
   }
 
   renderThread(threadId, highlightPostId = null) {
@@ -86,7 +80,7 @@ class BlogSystem {
     header.innerHTML = `
       <h2>${thread.title}</h2>
       <div class="thread-progress">
-        <span class="current-post">${this.currentPostIndex + 1}</span> / 
+        <span class="current-post">${this.currentPostIndex + 1}</span> /
         <span class="total-posts">${thread.posts.length}</span>
       </div>
     `;
